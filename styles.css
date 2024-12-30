@@ -1,0 +1,118 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.carousel-item img {
+    max-height: 70vh;
+    object-fit: cover;
+}
+
+/* Add more CSS for custom styles */
+
+.gallery {
+    background-color: #f8f9fa;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.product-card {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+    height: 300px; /* Fixed height to ensure uniformity */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.btn-primary {
+    background-color: #563d7c; /* Custom color for the primary button */
+    border-color: #563d7c;
+}
+
+.btn-primary:hover {
+    background-color: #3e275b;
+    border-color: #3e275b;
+}
+
+/* about */
+.about-content {
+    padding: 50px 0;
+    background: url('images/background_texture.jpg') repeat; /* Use a subtle texture for background */
+    background-size: cover;
+}
+
+.about-content h2 {
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.text-link {
+    color: #563d7c;
+    text-decoration: none;
+    border-bottom: 1px dotted #563d7c;
+    transition: all 0.3s ease;
+}
+
+.text-link:hover {
+    color: #3e275b;
+    border-bottom: 1px solid #3e275b;
+}
+
+/* Lightbox custom styles */
+.lb-outerContainer {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+}
+
+.lb-data .lb-details {
+    color: #563d7c; /* Title color */
+}
+
+.lb-data .lb-caption {
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.lb-nav a.lb-prev, .lb-nav a.lb-next {
+    background-color: rgba(86, 61, 124, 0.5); /* Semi-transparent navigation buttons */
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none;
+}
+.popup-content {
+    max-width: 80%;
+    max-height: 80%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+.popup-content img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}

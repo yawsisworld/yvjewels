@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtisanGems - About Us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        /* Custom CSS for popup */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            display: none;
+        }
+        .popup-content {
+            max-width: 80%;
+            max-height: 80%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+        }
+        .popup-content img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #563d7c;
+        }
+        .close-popup:hover {
+            color: #3e275b;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include the header from index.html -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">ArtisanGems</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="about-content">
+            <div class="container">
+                <h2 class="text-center mb-4" style="font-family: 'Georgia', serif; color: #563d7c;">About ArtisanGems</h2>
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <p class="text-justify" style="background-color: #f8f9fa; border-left: 4px solid #563d7c; padding: 15px;">
+                            Welcome to <strong>ArtisanGems</strong>, where the timeless art of <a href="images/persian_art.jpg" data-title="Persian Art Influence" class="text-link">Persian miniature painting</a> meets the elegance of modern jewelry. My journey began in the heart of Iran, inspired by the intricate details of ancient manuscripts and the vibrant stories they tell.
+                        </p>
+                        
+                        <p class="text-justify" style="background-color: #f8f9fa; border-left: 4px solid #563d7c; padding: 15px;">
+                            Each piece I create is not just jewelry; it's a <a href="images/craftsmanship.jpg" data-title="Craftsmanship in Detail" class="text-link">narrative</a> told through the medium of gemstones and precious metals. Here, I blend traditional techniques with contemporary design to bring you:
+                        </p>
+                        
+                        <ul style="background-color: #f8f9fa; border-left: 4px solid #563d7c; padding: 15px;">
+                            <li><a href="images/product1.jpg" data-title="Miniature Ruby Ring" class="text-link">Rings</a> where every stroke of paint is a story.</li>
+                            <li><a href="images/product2.jpg" data-title="Emerald Necklace" class="text-link">Necklaces</a> that carry the legacy of Persian culture.</li>
+                            <li>Earrings and more, each piece a <a href="images/product3.jpg" data-title="Sapphire Earrings" class="text-link">work of art</a>.</li>
+                        </ul>
+
+                        <p class="text-justify" style="background-color: #f8f9fa; border-left: 4px solid #563d7c; padding: 15px;">
+                            The process of painting on gemstones is both meticulous and magical, transforming each stone into a canvas for <a href="images/painting_process.jpg" data-title="Painting on Gemstones" class="text-link">miniature masterpieces</a>. My commitment to quality ensures that every gemstone is ethically sourced, and every piece is crafted with the utmost care.
+                        </p>
+
+                        <p class="text-justify" style="background-color: #f8f9fa; border-left: 4px solid #563d7c; padding: 15px;">
+                            Join me in this journey through time and art. Each piece you wear is not just an accessory but a piece of history, reimagined.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Pop-up overlay -->
+    <div id="popupOverlay" class="popup-overlay">
+        <div class="popup-content">
+            <span class="close-popup">×</span>
+            <img id="popupImage" src="" alt="Popup Image">
+            <p id="popupCaption"></p>
+        </div>
+    </div>
+    <!-- Include the footer from index.html -->
+    <footer class="bg-dark text-light py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>ArtisanGems crafts unique jewelry inspired by Persian miniatures.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <p>Get in touch via <a href="whatsapp://send?phone=+989209291209&text=Hello%20from%20ArtisanGems!" class="text-light">WhatsApp</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <!-- Social media icons would go here -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add event listeners to all links with class 'text-link'
+            document.querySelectorAll('.text-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.getElementById('popupImage').src = this.href;
+                    document.getElementById('popupCaption').textContent = this.getAttribute('data-title');
+                    document.getElementById('popupOverlay').style.display = 'flex';
+                });
+            });
+
+            // Close the popup by clicking the close button
+            document.querySelector('.close-popup').addEventListener('click', function() {
+                document.getElementById('popupOverlay').style.display = 'none';
+            });
+
+            // Close the popup by clicking outside the image
+            document.getElementById('popupOverlay').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
