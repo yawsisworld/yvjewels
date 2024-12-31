@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YVJewels - Gallery</title>
+    <title>ArtisanGems - Gallery</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <!-- Include the header from index.html -->
-
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="index.html">YVJewels</a>
@@ -27,71 +26,94 @@
         </nav>
     </header>
     <main>
-        <section class="gallery">
+        <section class="gallery-page">
             <div class="container">
-                <h2 class="text-center mb-4">Our Masterpieces</h2>
-                <div class="row">
-                    <!-- Product 1 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card product-card">
-                            <img src="images/product1.jpg" class="card-img-top" alt="Product 1">
-                            <div class="card-body">
-                                <h5 class="card-title">Miniature Ruby Ring</h5>
-                                <p class="card-text">A delicate dance of ruby with Persian motifs.</p>
-                                <a href="whatsapp://send?phone=+989209291209&text=I'm%20interested%20in%20the%20Miniature%20Ruby%20Ring" class="btn btn-primary btn-block">Order via WhatsApp</a>
+                <h2 class="text-center mb-4">Our Collection</h2>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <select class="custom-select" id="sortSelect">
+                                <option value="default">Default Sorting</option>
+                                <option value="priceLowToHigh">Price: Low to High</option>
+                                <option value="priceHighToLow">Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for products..." id="searchInput">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button" onclick="searchProducts()">Search</button>
                             </div>
                         </div>
                     </div>
-                    <!-- Product 2 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card product-card">
-                            <img src="images/product2.jpg" class="card-img-top" alt="Product 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Emerald Necklace</h5>
-                                <p class="card-text">Inspired by the tales of ancient Persia.</p>
-                                <a href="whatsapp://send?phone=+989209291209&text=I'm%20interested%20in%20the%20Emerald%20Necklace" class="btn btn-primary btn-block">Order via WhatsApp</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 3 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card product-card">
-                            <img src="images/product3.jpg" class="card-img-top" alt="Product 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Sapphire Earrings</h5>
-                                <p class="card-text">A splash of blue with intricate designs.</p>
-                                <a href="whatsapp://send?phone=+989209291209&text=I'm%20interested%20in%20the%20Sapphire%20Earrings" class="btn btn-primary btn-block">Order via WhatsApp</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more products as needed -->
+                </div>
+                <div class="row product-list" id="productList">
+                    <!-- Products will be dynamically inserted here -->
                 </div>
             </div>
         </section>
     </main>
     <!-- Include the footer from index.html -->
-    <footer class="bg-dark text-light py-3">
+    <footer class="footer-dark bg-gradient-to-b from-gray-800 to-gray-900 text-light py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>About Us</h5>
-                    <p>YVJewels crafts unique jewelry inspired by Persian miniatures.</p>
+            <div class="row justify-content-center">
+                <!-- About Us -->
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-3">About YVJewels</h5>
+                    <p class="text-muted">Crafting stories through jewelry, inspired by the timeless art of Persian miniatures.</p>
                 </div>
-                <div class="col-md-4">
-                    <h5>Contact</h5>
-                    <p>Get in touch via <a href="whatsapp://send?phone=+989209291209&text=Hello%20from%20YVJewels!" class="text-light">WhatsApp</a></p>
+    
+                <!-- Contact -->
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-3">Contact Us</h5>
+                    <p>
+                        <a href="whatsapp://send?phone=+989209291209&text=Hello%20from%20YVJewels!" class="text-light d-block mb-2">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="mailto:info@yvjewels.com" class="text-light d-block">
+                            <i class="far fa-envelope"></i> Email Us
+                        </a>
+                    </p>
                 </div>
-                <div class="col-md-4">
-                    <h5>Follow Us</h5>
-                    <!-- Social media icons would go here -->
+    
+                <!-- Social Media -->
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-3">Follow Us</h5>
+                    <ul class="list-inline social-icons">
+                        <li class="list-inline-item"><a href="#" class="text-light"><i class="fab fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-light"><i class="fab fa-facebook-f"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-light"><i class="fab fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-light"><i class="fab fa-pinterest-p"></i></a></li>
+                    </ul>
+                </div>
+    
+                <!-- Additional Section -->
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-3">Newsletter</h5>
+                    <form>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button" id="button-addon2">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    
+            <!-- Copyright -->
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="text-muted small mb-0">&copy; 2024 YVJewels. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
-    
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="/scripts.js"></script>
+    <script src="./scripts.js"></script>
 </body>
 </html>
